@@ -1,14 +1,14 @@
 // Array de preguntas con sus respuestas y opciones
 const questions = [
-  { question: 'G_to', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'Cas_', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'P_rro', answer: 'e', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'T_za', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'S_l', answer: 'o', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'Fl_r', answer: 'o', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'L_na', answer: 'u', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'C_ma', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'] },
-  { question: 'Os_to', answer: 'i', options: ['a', 'e', 'i', 'o', 'u'] }
+  { question: 'G_to', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/gato.png' },
+  { question: 'Cas_', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/casa.png' },
+  { question: 'P_rro', answer: 'e', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/perro.png' },
+  { question: 'T_za', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/taza.png' },
+  { question: 'S_l', answer: 'o', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/sol.png' },
+  { question: 'Fl_r', answer: 'o', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/flor.png' },
+  { question: 'L_na', answer: 'u', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/luna.png' },
+  { question: 'C_ma', answer: 'a', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/cama.png' },
+  { question: 'Os_to', answer: 'i', options: ['a', 'e', 'i', 'o', 'u'], image: 'images/osito.png' }
 ];
 
 // Variables para controlar la pregunta actual y la puntuación
@@ -23,6 +23,7 @@ const questionEl = document.getElementById('question');
 const answersEl = document.getElementById('answers');
 const messageEl = document.getElementById('message');
 const scoreEl = document.getElementById('score');
+const questionImage = document.getElementById('question-image');
 
 // Función para mostrar una pregunta
 function showQuestion() {
@@ -31,6 +32,10 @@ function showQuestion() {
 
   // Actualiza el texto de la pregunta
   questionEl.textContent = currentQuestion.question;
+
+  // Actualiza la imagen de la pregunta
+  questionImage.src = currentQuestion.image;
+  questionImage.alt = 'Referencia de la palabra';
 
   // Limpia el contenedor de las respuestas
   answersEl.innerHTML = '';
@@ -72,6 +77,7 @@ function checkAnswer(e) {
     showQuestion();
   } else {
     questionEl.textContent = '¡Has terminado el juego!';
+    questionImage.style.display = 'none';
     answersEl.innerHTML = '';
   }
 }
