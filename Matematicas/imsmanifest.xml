@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="SimpleExample" version="1.0" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1">
+    <organizations default="MyOrganization">
+        <organization identifier="MyOrganization" structure="hierarchical">
+            <item identifier="MyItem" isvisible="true">
+                <title>Juego de Multiplicaciones</title>
+                <resource identifier="MyResource" type="webcontent" href="index.html">
+                    <file href="index.html"/>
+                    <file href="css/style.css"/>
+                    <file href="js/game.js"/>
+                    <file href="audio/correct.mp3"/>
+                    <file href="audio/incorrect.mp3"/>
+                </resource>
+            </item>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="MyResource" type="webcontent" href="index.html">
+            <file href="index.html"/>
+            <file href="css/style.css"/>
+            <file href="js/game.js"/>
+            <file href="audio/correct.mp3"/>
+            <file href="audio/incorrect.mp3"/>
+        </resource>
+    </resources>
+</manifest>
